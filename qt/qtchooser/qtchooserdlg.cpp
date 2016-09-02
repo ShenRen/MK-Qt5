@@ -9,36 +9,35 @@ All available in qtchooser branch
 
 #include <QtDebug>
 #include <QtWidgets/QFileSystemModel>
-
+#include <QProcessEnvironment>
 
 qtChooserDlg::qtChooserDlg()
 {
 QString str;
-QStringList list;
+QStringList list, pathList;
+QDir *dir;
+QFileInfoList filesList[3];
+QTreeWidgetItem *header[3];
 
-    // build the dialog from ui
     setupUi(this);
-
-//////////////////////////////////////////////////////////////////////////////////////
 
     QCoreApplication::setOrganizationName("MGWare");
     QCoreApplication::setOrganizationDomain("mgware.co.uk");
     QCoreApplication::setApplicationName("qtchooser");
 
-    // qt does not understand ~/ so path must be absolute or it will create ~/ on PWD
-    struct passwd *pw = getpwuid(getuid());
-    homeDir = pw->pw_dir;
-    str = homeDir;
-    str += "/.config/MGWare/qtchooser/qtchooser.ini";
+    homeDir = QStandardPaths::locate(QStandardPaths::HomeLocation, QString(), QStandardPaths::LocateDirectory);
+    mkHome = QProcessEnvironment::systemEnvironment().value("EMC2_HOME", "");
+
+    str = homeDir + "/.config/MGWare/qtchooser/qtchooser.ini";
     settings = new QSettings(str, QSettings::IniFormat, this);
 
     // just get the item text for now
     getLastSelected();
     // make sure the saved file still exists
-    QDir *dir0 = new QDir();
+    dir = new QDir();
     if(lastFile.length())
         {
-        if(dir0->exists(lastFile))
+        if(dir->exists(lastFile))
             {
             list = lastFile.split("/");
             if(!list.isEmpty())
@@ -60,68 +59,34 @@ QStringList list;
         }
     selectionItem = NULL;
 
-///////////////////////////////////////////////////////////////////////////////////////
-
     treeConfigs->setColumnCount(1);
     treeConfigs->setHeaderLabel("Machinekit - .INI file chooser");
-    // always have user configs first
-    // search for configs in default locations
 
-    QString path1 = "/usr/src/machinekit/configs";
-    QString path2 = "/usr/share/linuxcnc/examples/sample-configs";
-    QString path3 = homeDir + "/src/machinekit/sample-configs";
-    QString path4 = homeDir + "/machinekit/configs";
-    // This allows user defined extra path to search for configs in ini
-    getExtraPath();
-    QString path5 = extraPath;
-//    qDebug() << "extraPath = " << extraPath;
-    QDir* dir1 = new QDir();
+        // if it is a RIP, this will find it
+    if(mkHome.length())
+        pathList.append(mkHome + "/configs");
+        // std install examples
+    pathList.append("/usr/share/linuxcnc/examples/sample-configs");
+        // ~/machinekit
+    pathList.append(homeDir + "machinekit/configs");
 
-    if(dir1->exists(path1))
+    for(int x = 0; x < pathList.size(); x++)
         {
-        dir1->setPath(path1);
-        }
-    else if(dir1->exists(path2) )
-        {
-        dir1->setPath(path2);
-        }
-    else
-        {
-        if(dir1->exists(path3))
+        if(dir->exists(pathList[x]))
             {
-            dir1->setPath(path3);
+            dir->setPath(pathList[x]);
+            if((! (dir->path()).isEmpty()) && ((dir->path()) != ".") )
+                {
+                filesList[x] = dir->entryInfoList();
+                header[x] = new QTreeWidgetItem();
+                header[x]->setText(0,dir->path());
+                treeConfigs->insertTopLevelItem(0, header[x]);
+                addParents( header[x], filesList[x]);
+                }
             }
         }
 
-    if((! (dir1->path()).isEmpty()) && ((dir1->path()) != ".") )
-        {
-        QFileInfoList filesList1 = dir1->entryInfoList();
-        QTreeWidgetItem* header1 = new QTreeWidgetItem();
-        header1->setText(0,dir1->path());
-        treeConfigs->insertTopLevelItem(0, header1);
-        addParents( header1, filesList1);    
-        }
-    
-    QDir* dir2 = new QDir(path4);
-    if((! (dir2->path()).isEmpty()) && ((dir2->path()) != ".") )
-        {        
-        QFileInfoList filesList2 = dir2->entryInfoList();    
-        QTreeWidgetItem* header2 = new QTreeWidgetItem();
-        header2->setText(0,dir2->path());
-        treeConfigs->insertTopLevelItem(0, header2);
-        addParents( header2, filesList2);
-        }
-//    qDebug() << "path5 = " << path5;        
-    if(path5.length() && dir0->exists(path5))
-        {
-        QDir* dir3 = new QDir(path5);
-        QTreeWidgetItem* header3 = new QTreeWidgetItem();
-        header3->setText(0,dir3->path());
-        treeConfigs->insertTopLevelItem(0, header3);
-        QFileInfoList filesList3 = dir3->entryInfoList();
-        addParents( header3, filesList3);
-        }
-    // now restore the tree state
+        // now restore the tree state
     readSettings();
 
     connect(treeConfigs , SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),    this, SLOT(onItemDoubleClicked(QTreeWidgetItem*,int)));
@@ -131,7 +96,7 @@ QStringList list;
     if(selectionItem != NULL)
         {
         treeConfigs->setCurrentItem(selectionItem);
-        // manually select it and show README
+            // manually select it and show README
         onItemClicked(selectionItem, 0);
         }
 
@@ -358,14 +323,6 @@ void qtChooserDlg::getLastSelected()
 {
     settings->beginGroup("LAST_FILE");
     lastFile = settings->value("LastFile", "").toString();
-    settings->endGroup();
-
-}
-
-void qtChooserDlg::getExtraPath()
-{
-    settings->beginGroup("EXTRA_PATH");
-    extraPath = settings->value("ExtraPath", "").toString();
     settings->endGroup();
 
 }

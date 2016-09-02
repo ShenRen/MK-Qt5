@@ -29,19 +29,18 @@ private:
     QString selectionParentName;
     QString selectionName;
     QString homeDir;
-    QString extraPath;
-    
+    QString mkHome;
+
     QTreeWidgetItem *selectionItem;
-    
+
     void writeSettings();
     void readSettings();
     void getLastSelected();
-    void getExtraPath();
-    
+
     QTreeWidgetItem* addChildren(QTreeWidgetItem* ,QString );
     void addParents(QTreeWidgetItem*, QFileInfoList& );
     QString getFullPath(QTreeWidgetItem* item);
-    
+
 private slots:
 
    virtual void onItemClicked(QTreeWidgetItem* item, int col);

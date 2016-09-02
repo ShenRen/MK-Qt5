@@ -3,13 +3,14 @@
 ######################################################################
 
 TEMPLATE = app
-TARGET = ../../bin/qtchooser
+TARGET = qtchooser
 
 QT += core gui widgets
 
 QMAKE_CXXFLAGS += -D_FORTIFY_SOURCE=0 -D_GNU_SOURCE -DULAPI -mhard-float -fno-fast-math -mieee-fp -fno-unsafe-math-optimizations -Wframe-larger-than=2560 -Os -std=c++0x
-INCLUDEPATH += . /usr/include $QTDIR/include ../include
-QMAKE_LIBDIR += /lib $QTDIR/lib /usr/lib /usr/local/lib
+INCLUDEPATH += . /usr/include usr/include/linux /usr/local/include /usr/local/include/machinekit /opt/Qt/5.4/gcc_64/include
+QMAKE_LIBDIR += /lib /opt/Qt/5.4/gcc_64/plugins/designer /opt/Qt/5.4/gcc_64/lib /usr/local/lib/machinekit
+LIBS += -llinuxcncini -llinuxcnchal -lnml -llinuxcnc -lposemath
 
 DEPENDPATH += .
 
