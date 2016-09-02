@@ -1,0 +1,1774 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QtAxis</class>
+ <widget class="QMainWindow" name="QtAxis">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>606</width>
+    <height>925</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QtAxis</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_6">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabControl">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tabManual">
+       <attribute name="title">
+        <string>Manual</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_7">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QRadioButton" name="rbX">
+            <property name="text">
+             <string>X</string>
+            </property>
+            <property name="shortcut">
+             <string>X</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rbY">
+            <property name="text">
+             <string>Y</string>
+            </property>
+            <property name="shortcut">
+             <string>Y</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rbZ">
+            <property name="text">
+             <string>Z</string>
+            </property>
+            <property name="shortcut">
+             <string>Z</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rbU">
+            <property name="text">
+             <string>U</string>
+            </property>
+            <property name="shortcut">
+             <string>U</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rbV">
+            <property name="text">
+             <string>V</string>
+            </property>
+            <property name="shortcut">
+             <string>V</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rbW">
+            <property name="text">
+             <string>W</string>
+            </property>
+            <property name="shortcut">
+             <string>W</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rbA">
+            <property name="text">
+             <string>A</string>
+            </property>
+            <property name="shortcut">
+             <string>A</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rbB">
+            <property name="text">
+             <string>B</string>
+            </property>
+            <property name="shortcut">
+             <string>B</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rbC">
+            <property name="text">
+             <string>C</string>
+            </property>
+            <property name="shortcut">
+             <string>C</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QPushButton" name="pbHome">
+            <property name="text">
+             <string>Home</string>
+            </property>
+            <property name="shortcut">
+             <string>Home</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pbUnReHome">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="shortcut">
+             <string>Ctrl+S</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pbTouch">
+            <property name="text">
+             <string>Touch Off</string>
+            </property>
+            <property name="shortcut">
+             <string>Ctrl+T</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="lbFeed">
+            <property name="text">
+             <string>Feed Override:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="slideFeed">
+            <property name="maximum">
+             <number>150</number>
+            </property>
+            <property name="singleStep">
+             <number>5</number>
+            </property>
+            <property name="pageStep">
+             <number>20</number>
+            </property>
+            <property name="value">
+             <number>100</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="tickPosition">
+             <enum>QSlider::TicksBelow</enum>
+            </property>
+            <property name="tickInterval">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="3" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="lbVelocity">
+            <property name="text">
+             <string>Max Velocity</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="slideVelocity">
+            <property name="maximum">
+             <number>2000</number>
+            </property>
+            <property name="singleStep">
+             <number>10</number>
+            </property>
+            <property name="pageStep">
+             <number>50</number>
+            </property>
+            <property name="value">
+             <number>200</number>
+            </property>
+            <property name="tracking">
+             <bool>true</bool>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="invertedAppearance">
+             <bool>false</bool>
+            </property>
+            <property name="invertedControls">
+             <bool>false</bool>
+            </property>
+            <property name="tickPosition">
+             <enum>QSlider::TicksBelow</enum>
+            </property>
+            <property name="tickInterval">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="4" column="0">
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="1">
+           <widget class="QPushButton" name="pbJogYPlus">
+            <property name="text">
+             <string>Y+</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QPushButton" name="pbJogXPlus">
+            <property name="text">
+             <string>X+ &gt;</string>
+            </property>
+            <property name="autoRepeat">
+             <bool>false</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPushButton" name="pbJogXMinus">
+            <property name="text">
+             <string>&lt; X-</string>
+            </property>
+            <property name="autoRepeat">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QPushButton" name="pbJogZPlus">
+            <property name="text">
+             <string>Z+</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QPushButton" name="pbJogZMinus">
+            <property name="text">
+             <string>Z-</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QPushButton" name="pbJogYMinus">
+            <property name="text">
+             <string>Y-</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="5" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="lbJog">
+            <property name="text">
+             <string>Jog Speed:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="slideJog">
+            <property name="maximum">
+             <number>600</number>
+            </property>
+            <property name="singleStep">
+             <number>10</number>
+            </property>
+            <property name="pageStep">
+             <number>50</number>
+            </property>
+            <property name="value">
+             <number>300</number>
+            </property>
+            <property name="sliderPosition">
+             <number>300</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="tickPosition">
+             <enum>QSlider::TicksBelow</enum>
+            </property>
+            <property name="tickInterval">
+             <number>50</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabMDI">
+       <attribute name="title">
+        <string>MDI</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0" colspan="4">
+         <widget class="QListWidget" name="list_MDI">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="3">
+         <widget class="QLineEdit" name="le_MDI"/>
+        </item>
+        <item row="1" column="3">
+         <widget class="QPushButton" name="pb_MDI">
+          <property name="text">
+           <string>Go</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="4">
+         <widget class="QLabel" name="lb_activeGCodes">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Sunken</enum>
+          </property>
+          <property name="lineWidth">
+           <number>2</number>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="4">
+         <widget class="QLabel" name="lb_activeMCodes">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Sunken</enum>
+          </property>
+          <property name="lineWidth">
+           <number>2</number>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="lb_feedSpeed">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Sunken</enum>
+          </property>
+          <property name="lineWidth">
+           <number>2</number>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QPushButton" name="pb_MDIClear">
+          <property name="text">
+           <string>Clear</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QPushButton" name="pb_MDICopy">
+          <property name="text">
+           <string>Copy</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="3">
+         <widget class="QPushButton" name="pb_MDIPaste">
+          <property name="text">
+           <string>Paste to MDI</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTabWidget" name="tabView">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tabPlot">
+       <attribute name="title">
+        <string>Messages</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0" colspan="2">
+         <widget class="QTextBrowser" name="te_Messages"/>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="pbClear">
+          <property name="text">
+           <string>Clear</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>407</width>
+            <height>17</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabDRO">
+       <attribute name="title">
+        <string>DRO</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>42</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="lbHeaderG54">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string>G54</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLabel" name="lbHeaderG53">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string>G53</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QLabel" name="lbHeaderx">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="labelX">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>X:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="lbXG54">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="lbXG53">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QLabel" name="lbXx">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="labelY">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Y:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="lbYG54">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLabel" name="lbYG53">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QLabel" name="lbYx">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="labelZ">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Z:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLabel" name="lbZG54">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QLabel" name="lbZG53">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3">
+         <widget class="QLabel" name="lbZx">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="labelU">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>U:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLabel" name="lbUG54">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QLabel" name="lbUG53">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="3">
+         <widget class="QLabel" name="lbUx">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="labelV">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>V:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLabel" name="lbVG54">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="2">
+         <widget class="QLabel" name="lbVG53">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="3">
+         <widget class="QLabel" name="lbVx">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="labelW">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>W:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QLabel" name="lbWG54">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="2">
+         <widget class="QLabel" name="lbWG53">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="3">
+         <widget class="QLabel" name="lbWx">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QLabel" name="labelA">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>A:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QLabel" name="lbAG54">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="2">
+         <widget class="QLabel" name="lbAG53">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="3">
+         <widget class="QLabel" name="lbAx">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="labelB">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>B:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
+         <widget class="QLabel" name="lbBG54">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="2">
+         <widget class="QLabel" name="lbBG53">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="3">
+         <widget class="QLabel" name="lbBx">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <widget class="QLabel" name="labelC">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>C:</string>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="1">
+         <widget class="QLabel" name="lbCG54">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="2">
+         <widget class="QLabel" name="lbCG53">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="3">
+         <widget class="QLabel" name="lbCx">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>G Code</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="CodeEditor" name="te_Code"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>606</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="action_Reload"/>
+    <addaction name="separator"/>
+    <addaction name="actionSaveAs"/>
+    <addaction name="separator"/>
+    <addaction name="actionRecentFiles"/>
+    <addaction name="actionLoadLast"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuMachine">
+    <property name="title">
+     <string>&amp;Machine</string>
+    </property>
+    <addaction name="actionToggleEstop"/>
+    <addaction name="actionToggleMachineOn"/>
+    <addaction name="separator"/>
+    <addaction name="actionHome"/>
+    <addaction name="separator"/>
+    <addaction name="actionRun"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionStopOnError"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionAboutQtAxis"/>
+    <addaction name="actionAboutQt"/>
+   </widget>
+   <widget class="QMenu" name="menuVeiw">
+    <property name="title">
+     <string>&amp;View</string>
+    </property>
+    <addaction name="actionGremlin"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuMachine"/>
+   <addaction name="menuVeiw"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="floatable">
+    <bool>true</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionToggleEstop"/>
+   <addaction name="actionToggleMachineOn"/>
+   <addaction name="actionHome"/>
+   <addaction name="separator"/>
+   <addaction name="actionOpen"/>
+   <addaction name="separator"/>
+   <addaction name="actionRunProgram"/>
+   <addaction name="actionPauseProgram"/>
+   <addaction name="actionStep"/>
+   <addaction name="actionStopProgram"/>
+   <addaction name="separator"/>
+   <addaction name="actionAboutQtAxis"/>
+   <addaction name="actionAboutQt"/>
+  </widget>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="QtAxis.qrc">
+     <normaloff>:/new/CNCicons/icons/exit.png</normaloff>:/new/CNCicons/icons/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="QtAxis.qrc">
+     <normaloff>:/new/CNCicons/icons/fileopen.png</normaloff>:/new/CNCicons/icons/fileopen.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="toolTip">
+    <string>Open (Ctrl+0)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionRecentFiles">
+   <property name="text">
+    <string>Recent Files</string>
+   </property>
+  </action>
+  <action name="actionEdit">
+   <property name="text">
+    <string>Edit</string>
+   </property>
+  </action>
+  <action name="actionReload">
+   <property name="icon">
+    <iconset resource="QtAxis.qrc">
+     <normaloff>:/new/CNCicons/icons/reload.png</normaloff>:/new/CNCicons/icons/reload.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reload</string>
+   </property>
+   <property name="toolTip">
+    <string>Reload (CTRL+R)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionProperties">
+   <property name="icon">
+    <iconset resource="QtAxis.qrc">
+     <normaloff>:/new/CNCicons/icons/properties.png</normaloff>:/new/CNCicons/icons/properties.png</iconset>
+   </property>
+   <property name="text">
+    <string>Properties</string>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="icon">
+    <iconset resource="QtAxis.qrc">
+     <normaloff>:/new/CNCicons/icons/filesaveas.png</normaloff>:/new/CNCicons/icons/filesaveas.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save As</string>
+   </property>
+   <property name="toolTip">
+    <string>Save As (Ctrl + Shift + S)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionToolTable">
+   <property name="icon">
+    <iconset resource="QtAxis.qrc">
+     <normaloff>:/new/CNCicons/icons/edit.png</normaloff>:/new/CNCicons/icons/edit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Edit Tool Table</string>
+   </property>
+   <property name="toolTip">
+    <string>Edit Tool Table</string>
+   </property>
+  </action>
+  <action name="actionReloadToolTable">
+   <property name="text">
+    <string>Reload Tool Table</string>
+   </property>
+  </action>
+  <action name="actionToggleEstop">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="QtAxis.qrc">
+     <normaloff>:/new/CNCicons/icons/estop.png</normaloff>:/new/CNCicons/icons/estop.png</iconset>
+   </property>
+   <property name="text">
+    <string>Toggle &amp;ESTOP</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle ESTOP (F1)</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="actionToggleMachineOn">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="QtAxis.qrc">
+     <normaloff>:/new/CNCicons/icons/machine_toggle.png</normaloff>:/new/CNCicons/icons/machine_toggle.png</iconset>
+   </property>
+   <property name="text">
+    <string>Toggle &amp;Machine ON</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle Machine ON (F2)</string>
+   </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
+  </action>
+  <action name="actionRunProgram">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="QtAxis.qrc">
+     <normaloff>:/new/CNCicons/icons/run_program.png</normaloff>:/new/CNCicons/icons/run_program.png</iconset>
+   </property>
+   <property name="text">
+    <string>Run Program</string>
+   </property>
+   <property name="toolTip">
+    <string>Run Program (R)</string>
+   </property>
+   <property name="shortcut">
+    <string>R</string>
+   </property>
+  </action>
+  <action name="actionPauseProgram">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="QtAxis.qrc">
+     <normaloff>:/new/CNCicons/icons/pause_program.png</normaloff>:/new/CNCicons/icons/pause_program.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pause Program</string>
+   </property>
+   <property name="toolTip">
+    <string>Pause Program (Space)</string>
+   </property>
+   <property name="shortcut">
+    <string>Space</string>
+   </property>
+  </action>
+  <action name="actionStopProgram">
+   <property name="icon">
+    <iconset resource="QtAxis.qrc">
+     <normaloff>:/new/CNCicons/icons/stop_program.png</normaloff>:/new/CNCicons/icons/stop_program.png</iconset>
+   </property>
+   <property name="text">
+    <string>Stop Program</string>
+   </property>
+   <property name="toolTip">
+    <string>Stop Program (Esc)</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
+  </action>
+  <action name="actionStep">
+   <property name="icon">
+    <iconset resource="QtAxis.qrc">
+     <normaloff>:/new/CNCicons/icons/skip_program.png</normaloff>:/new/CNCicons/icons/skip_program.png</iconset>
+   </property>
+   <property name="text">
+    <string>Step</string>
+   </property>
+   <property name="toolTip">
+    <string>Step (S)</string>
+   </property>
+   <property name="shortcut">
+    <string>S</string>
+   </property>
+  </action>
+  <action name="actionAboutQtAxis">
+   <property name="icon">
+    <iconset resource="QtAxis.qrc">
+     <normaloff>:/new/CNCicons/icons/help_about.png</normaloff>:/new/CNCicons/icons/help_about.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;About QtAxis</string>
+   </property>
+  </action>
+  <action name="actionAboutQt">
+   <property name="icon">
+    <iconset resource="QtAxis.qrc">
+     <normaloff>:/new/CNCicons/icons/Qt.png</normaloff>:/new/CNCicons/icons/Qt.png</iconset>
+   </property>
+   <property name="text">
+    <string>About &amp;Qt</string>
+   </property>
+  </action>
+  <action name="actionHome">
+   <property name="icon">
+    <iconset resource="QtAxis.qrc">
+     <normaloff>:/new/CNCicons/icons/kfm_home.png</normaloff>:/new/CNCicons/icons/kfm_home.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Home</string>
+   </property>
+   <property name="toolTip">
+    <string>Home (Home)</string>
+   </property>
+   <property name="shortcut">
+    <string>Home</string>
+   </property>
+  </action>
+  <action name="actionLoadLast">
+   <property name="text">
+    <string>&amp;Load Last File</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionOptionalStop">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="QtAxis.qrc">
+     <normaloff>:/new/CNCicons/icons/optional.png</normaloff>:/new/CNCicons/icons/optional.png</iconset>
+   </property>
+   <property name="text">
+    <string>Optional Stop</string>
+   </property>
+   <property name="toolTip">
+    <string>Optional Stop</string>
+   </property>
+  </action>
+  <action name="actionRun">
+   <property name="text">
+    <string>&amp;Run</string>
+   </property>
+   <property name="shortcut">
+    <string>R</string>
+   </property>
+  </action>
+  <action name="actionGremlin">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Gremlin_Settings</string>
+   </property>
+   <property name="toolTip">
+    <string>Launch Gremlin at start up</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionStopOnError">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Stop on Error</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
+  </action>
+  <action name="action_Reload">
+   <property name="text">
+    <string>&amp;Reload</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CodeEditor</class>
+   <extends>QPlainTextEdit</extends>
+   <header>code_editor.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="QtAxis.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>slideJog</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onJogSliderChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>271</x>
+     <y>338</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>516</x>
+     <y>697</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tabControl</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onTabControlChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>496</x>
+     <y>392</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>le_MDI</sender>
+   <signal>returnPressed()</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onReturnMDICommand()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>333</x>
+     <y>333</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>453</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pb_MDIClear</sender>
+   <signal>clicked()</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onMdiClear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>422</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>507</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pb_MDICopy</sender>
+   <signal>clicked()</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onMdiCopy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>271</x>
+     <y>422</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>543</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slideVelocity</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onVelocitySliderChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>271</x>
+     <y>398</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>592</x>
+     <y>711</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbUnReHome</sender>
+   <signal>clicked()</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onUnReHome()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>189</x>
+     <y>175</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>187</x>
+     <y>803</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>list_MDI</sender>
+   <signal>itemEntered(QListWidgetItem*)</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onSelectFromMDIList(QListWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>177</x>
+     <y>264</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>340</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbTouch</sender>
+   <signal>clicked()</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onTouchOff()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>396</x>
+     <y>185</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1</x>
+     <y>382</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pb_MDI</sender>
+   <signal>clicked()</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onReturnMDICommand()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>396</x>
+     <y>335</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>413</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slideFeed</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onFeedSliderChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>280</x>
+     <y>239</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>475</x>
+     <y>702</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pb_MDIPaste</sender>
+   <signal>clicked()</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onMdiPaste()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>396</x>
+     <y>422</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>591</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>list_MDI</sender>
+   <signal>itemDoubleClicked(QListWidgetItem*)</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onSelectFromMDIList(QListWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>295</x>
+     <y>236</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>306</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbHome</sender>
+   <signal>clicked()</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onHome()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>185</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>344</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbA</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onAxis(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>393</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>250</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbX</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onAxis(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>47</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>121</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbV</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onAxis(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>287</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>187</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbB</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onAxis(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>446</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>281</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbZ</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onAxis(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>141</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1</x>
+     <y>150</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbC</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onAxis(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>499</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>311</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbY</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onAxis(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>101</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbW</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onAxis(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>340</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbU</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onAxis(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>234</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>8</x>
+     <y>69</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tabView</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>QtAxis</receiver>
+   <slot>onTabViewChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>302</x>
+     <y>689</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>302</x>
+     <y>462</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onAxis(bool)</slot>
+  <slot>onHome()</slot>
+  <slot>onTouchOff()</slot>
+  <slot>onJogMinus()</slot>
+  <slot>onJogPlus()</slot>
+  <slot>onCbJogMethod(int)</slot>
+  <slot>onTabViewChanged(int)</slot>
+  <slot>onTabControlChanged(int)</slot>
+  <slot>onReturnMDICommand()</slot>
+  <slot>onSelectFromMDIList(QListWidgetItem*)</slot>
+  <slot>onMdiClear()</slot>
+  <slot>onMdiCopy()</slot>
+  <slot>onMdiPaste()</slot>
+  <slot>onEdit()</slot>
+  <slot>onGCodeChanged()</slot>
+  <slot>onAbout()</slot>
+  <slot>onJogOff()</slot>
+  <slot>onJogSliderChanged(int)</slot>
+  <slot>onEditToolTable()</slot>
+  <slot>onFeedSliderChanged(int)</slot>
+  <slot>onVelocitySliderChanged(int)</slot>
+  <slot>onUnReHome()</slot>
+  <slot>onResetDiameter()</slot>
+ </slots>
+</ui>
