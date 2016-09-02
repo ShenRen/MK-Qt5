@@ -3,7 +3,7 @@
 ######################################################################
 
 TEMPLATE = app
-TARGET = qtchooser
+TARGET = ../../bin/qtchooser
 
 QT += core gui widgets
 
