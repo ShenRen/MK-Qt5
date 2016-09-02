@@ -74,7 +74,7 @@ QStringList list;
     // This allows user defined extra path to search for configs in ini
     getExtraPath();
     QString path5 = extraPath;
-
+//    qDebug() << "extraPath = " << extraPath;
     QDir* dir1 = new QDir();
 
     if(dir1->exists(path1))
@@ -111,7 +111,7 @@ QStringList list;
         treeConfigs->insertTopLevelItem(0, header2);
         addParents( header2, filesList2);
         }
-        
+//    qDebug() << "path5 = " << path5;        
     if(path5.length() && dir0->exists(path5))
         {
         QDir* dir3 = new QDir(path5);
