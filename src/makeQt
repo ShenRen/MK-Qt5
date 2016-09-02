@@ -1,0 +1,42 @@
+#!/bin/bash
+
+if [ -n "$QTDIR" ] ; then
+    echo "Using QTDIR found at $QTDIR"
+else
+    echo "################################################################"
+    echo ""
+    echo "No QTDIR set"
+    echo ""
+    echo "This branch requires Qt5 to be installed."
+    echo ""    
+    echo "Set env variable QTDIR to the root dir of your Qt5 installation,"
+    echo "export QTDIR in your ~/.bashrc file, log out and log back in."
+    echo ""
+    echo "################################################################"
+    exit 1
+fi
+
+
+OLDWD=$PWD
+cd ../qt/qtchooser
+qmake -makefile
+make &> /dev/null;
+
+cd ../QtAxis
+qmake -makefile
+make &> /dev/null;
+
+cd ../XHCMonitor
+qmake -makefile
+make &> /dev/null;
+
+cd $OLDWD
+
+strip ../bin/qtchooser
+strip ../bin/QtAxis
+strip ../bin/XHCMonitor
+
+echo "Qt programs built and installed"
+
+
+
