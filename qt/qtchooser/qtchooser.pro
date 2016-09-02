@@ -8,8 +8,8 @@ TARGET = ../../bin/qtchooser
 QT += core gui widgets
 
 QMAKE_CXXFLAGS += -D_FORTIFY_SOURCE=0 -D_GNU_SOURCE -DULAPI -mhard-float -fno-fast-math -mieee-fp -fno-unsafe-math-optimizations -Wframe-larger-than=2560 -Os -std=c++0x
-INCLUDEPATH += . /usr/include $QTDIR/include
-QMAKE_LIBDIR += /lib $QTDIR/lib
+INCLUDEPATH += . /usr/include $QTDIR/include $EMC2_HOME/include
+QMAKE_LIBDIR += /lib $QTDIR/lib /usr/lib /usr/local/lib
 
 DEPENDPATH += .
 

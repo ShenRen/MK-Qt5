@@ -15,7 +15,7 @@ CXX           = g++
 DEFINES       = -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -D_FORTIFY_SOURCE=0 -D_GNU_SOURCE -DULAPI -mhard-float -fno-fast-math -mieee-fp -fno-unsafe-math-optimizations -Wframe-larger-than=2560 -Os -std=c++0x -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -I. -I../../../../include -I$QTDIR/include -I. -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore -I. -I. -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/mkspecs/linux-g++
+INCPATH       = -I. -I. -I../../../../include -I$QTDIR/include -I$EMC2_HOME/include -I. -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore -I. -I. -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/mkspecs/linux-g++
 QMAKE         = /usr/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -36,7 +36,7 @@ DISTNAME      = qtchooser1.0.0
 DISTDIR = /usr/src/MK-Qt5/qt/qtchooser/.tmp/qtchooser1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1 -Wl,-rpath,/opt/Qt/5.4/gcc_64 -Wl,-rpath,/opt/Qt/5.4/gcc_64/lib
-LIBS          = $(SUBLIBS) -L/lib -L$QTDIR/lib -L/opt/Qt/5.4/gcc_64/lib -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
+LIBS          = $(SUBLIBS) -L/lib -L$QTDIR/lib -L/usr/lib -L/usr/local/lib -L/opt/Qt/5.4/gcc_64/lib -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -942,7 +942,7 @@ moc_qtchooserdlg.cpp: /media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QtGu
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtreeview.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtreewidgetitemiterator.h \
 		qtchooserdlg.h
-	/opt/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/opt/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/usr/src/MK-Qt5/qt/qtchooser -I/usr/src/MK-Qt5/qt/qtchooser -I/usr/include -I'/usr/src/MK-Qt5/qt/qtchooser/$QTDIR/include' -I/usr/src/MK-Qt5/qt/qtchooser -I/opt/Qt/5.4/gcc_64/include -I/opt/Qt/5.4/gcc_64/include/QtWidgets -I/opt/Qt/5.4/gcc_64/include/QtGui -I/opt/Qt/5.4/gcc_64/include/QtCore qtchooserdlg.h -o moc_qtchooserdlg.cpp
+	/opt/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/opt/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/usr/src/MK-Qt5/qt/qtchooser -I/usr/src/MK-Qt5/qt/qtchooser -I/usr/include -I'/usr/src/MK-Qt5/qt/qtchooser/$QTDIR/include' -I'/usr/src/MK-Qt5/qt/qtchooser/$EMC2_HOME/include' -I/usr/src/MK-Qt5/qt/qtchooser -I/opt/Qt/5.4/gcc_64/include -I/opt/Qt/5.4/gcc_64/include/QtWidgets -I/opt/Qt/5.4/gcc_64/include/QtGui -I/opt/Qt/5.4/gcc_64/include/QtCore qtchooserdlg.h -o moc_qtchooserdlg.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:

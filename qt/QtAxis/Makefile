@@ -15,7 +15,7 @@ CXX           = g++
 DEFINES       = -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -D_FORTIFY_SOURCE=0 -D_GNU_SOURCE -DULAPI -mhard-float -fno-fast-math -mieee-fp -fno-unsafe-math-optimizations -Wframe-larger-than=2560 -Os -std=c++0x -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -I. -I../../../../include -I../../include -I$QTDIR/include -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore -I. -I. -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/mkspecs/linux-g++
+INCPATH       = -I. -I. -I../../../../include -I../../include -I$QTDIR/include -I$EMC2_HOME/include -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore -I. -I. -I/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/mkspecs/linux-g++
 QMAKE         = /usr/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -963,84 +963,29 @@ moc_QtAxis.cpp: /media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QtGui \
 		HAL_Access.h \
 		NML_Access.h \
 		ui_axis.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QVariant \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QApplication \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QGridLayout \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qgridlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qboxlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHBoxLayout \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLabel \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlabel.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLineEdit \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlineedit.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QListWidget \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlistwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlistview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMainWindow \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenu \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenuBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenubar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QPushButton \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qpushbutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QRadioButton \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qradiobutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QSlider \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QSpacerItem \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QStatusBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstatusbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QTabWidget \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QTextBrowser \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextbrowser.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QToolBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtoolbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QWidget \
+		touch-off_dlg.h \
+		ui_touch-off_dlg.h \
+		recent_files_dialog.h \
+		ui_recent_files_dialog.h \
 		code_editor.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QPlainTextEdit \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qplaintextedit.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenu \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
 		comment_highlighter.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QSyntaxHighlighter \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QHash \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QTextCharFormat \
-		touch-off_dlg.h \
-		ui_touch-off_dlg.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QComboBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qcombobox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialog \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialogButtonBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
-		recent_files_dialog.h \
-		ui_recent_files_dialog.h \
 		gremlindlg.h \
 		ui_gremlinDlg.h \
 		QtAxis.h
-	/opt/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/opt/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/include -I/usr/src/MK-Qt5/include -I'/usr/src/MK-Qt5/qt/QtAxis/$QTDIR/include' -I/opt/Qt/5.4/gcc_64/include -I/opt/Qt/5.4/gcc_64/include/QtWidgets -I/opt/Qt/5.4/gcc_64/include/QtGui -I/opt/Qt/5.4/gcc_64/include/QtCore QtAxis.h -o moc_QtAxis.cpp
+	/opt/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/opt/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/include -I/usr/src/MK-Qt5/include -I'/usr/src/MK-Qt5/qt/QtAxis/$QTDIR/include' -I'/usr/src/MK-Qt5/qt/QtAxis/$EMC2_HOME/include' -I/opt/Qt/5.4/gcc_64/include -I/opt/Qt/5.4/gcc_64/include/QtWidgets -I/opt/Qt/5.4/gcc_64/include/QtGui -I/opt/Qt/5.4/gcc_64/include/QtCore QtAxis.h -o moc_QtAxis.cpp
 
 moc_touch-off_dlg.cpp: /media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QtGui \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QtGuiDepends \
@@ -1436,43 +1381,8 @@ moc_touch-off_dlg.cpp: /media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QtG
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QSettings \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QCoreApplication \
 		ui_touch-off_dlg.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QVariant \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QApplication \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QComboBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qcombobox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialog \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdialog.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialogButtonBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLabel \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlabel.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLineEdit \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlineedit.h \
 		touch-off_dlg.h
-	/opt/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/opt/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/include -I/usr/src/MK-Qt5/include -I'/usr/src/MK-Qt5/qt/QtAxis/$QTDIR/include' -I/opt/Qt/5.4/gcc_64/include -I/opt/Qt/5.4/gcc_64/include/QtWidgets -I/opt/Qt/5.4/gcc_64/include/QtGui -I/opt/Qt/5.4/gcc_64/include/QtCore touch-off_dlg.h -o moc_touch-off_dlg.cpp
+	/opt/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/opt/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/include -I/usr/src/MK-Qt5/include -I'/usr/src/MK-Qt5/qt/QtAxis/$QTDIR/include' -I'/usr/src/MK-Qt5/qt/QtAxis/$EMC2_HOME/include' -I/opt/Qt/5.4/gcc_64/include -I/opt/Qt/5.4/gcc_64/include/QtWidgets -I/opt/Qt/5.4/gcc_64/include/QtGui -I/opt/Qt/5.4/gcc_64/include/QtCore touch-off_dlg.h -o moc_touch-off_dlg.cpp
 
 moc_recent_files_dialog.cpp: /media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QtGui \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QtGuiDepends \
@@ -1868,47 +1778,8 @@ moc_recent_files_dialog.cpp: /media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtG
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QSettings \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QCoreApplication \
 		ui_recent_files_dialog.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QVariant \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QApplication \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialog \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdialog.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QGridLayout \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qgridlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qboxlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QListWidget \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlistwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlistview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QPushButton \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qpushbutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QSpacerItem \
 		recent_files_dialog.h
-	/opt/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/opt/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/include -I/usr/src/MK-Qt5/include -I'/usr/src/MK-Qt5/qt/QtAxis/$QTDIR/include' -I/opt/Qt/5.4/gcc_64/include -I/opt/Qt/5.4/gcc_64/include/QtWidgets -I/opt/Qt/5.4/gcc_64/include/QtGui -I/opt/Qt/5.4/gcc_64/include/QtCore recent_files_dialog.h -o moc_recent_files_dialog.cpp
+	/opt/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/opt/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/include -I/usr/src/MK-Qt5/include -I'/usr/src/MK-Qt5/qt/QtAxis/$QTDIR/include' -I'/usr/src/MK-Qt5/qt/QtAxis/$EMC2_HOME/include' -I/opt/Qt/5.4/gcc_64/include -I/opt/Qt/5.4/gcc_64/include/QtWidgets -I/opt/Qt/5.4/gcc_64/include/QtGui -I/opt/Qt/5.4/gcc_64/include/QtCore recent_files_dialog.h -o moc_recent_files_dialog.cpp
 
 moc_code_editor.cpp: /media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QPlainTextEdit \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qplaintextedit.h \
@@ -2107,7 +1978,7 @@ moc_code_editor.cpp: /media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/Q
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QHash \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QTextCharFormat \
 		code_editor.h
-	/opt/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/opt/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/include -I/usr/src/MK-Qt5/include -I'/usr/src/MK-Qt5/qt/QtAxis/$QTDIR/include' -I/opt/Qt/5.4/gcc_64/include -I/opt/Qt/5.4/gcc_64/include/QtWidgets -I/opt/Qt/5.4/gcc_64/include/QtGui -I/opt/Qt/5.4/gcc_64/include/QtCore code_editor.h -o moc_code_editor.cpp
+	/opt/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/opt/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/include -I/usr/src/MK-Qt5/include -I'/usr/src/MK-Qt5/qt/QtAxis/$QTDIR/include' -I'/usr/src/MK-Qt5/qt/QtAxis/$EMC2_HOME/include' -I/opt/Qt/5.4/gcc_64/include -I/opt/Qt/5.4/gcc_64/include/QtWidgets -I/opt/Qt/5.4/gcc_64/include/QtGui -I/opt/Qt/5.4/gcc_64/include/QtCore code_editor.h -o moc_code_editor.cpp
 
 moc_comment_highlighter.cpp: /media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QSyntaxHighlighter \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/qsyntaxhighlighter.h \
@@ -2284,7 +2155,7 @@ moc_comment_highlighter.cpp: /media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtG
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QHash \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QTextCharFormat \
 		comment_highlighter.h
-	/opt/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/opt/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/include -I/usr/src/MK-Qt5/include -I'/usr/src/MK-Qt5/qt/QtAxis/$QTDIR/include' -I/opt/Qt/5.4/gcc_64/include -I/opt/Qt/5.4/gcc_64/include/QtWidgets -I/opt/Qt/5.4/gcc_64/include/QtGui -I/opt/Qt/5.4/gcc_64/include/QtCore comment_highlighter.h -o moc_comment_highlighter.cpp
+	/opt/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/opt/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/include -I/usr/src/MK-Qt5/include -I'/usr/src/MK-Qt5/qt/QtAxis/$QTDIR/include' -I'/usr/src/MK-Qt5/qt/QtAxis/$EMC2_HOME/include' -I/opt/Qt/5.4/gcc_64/include -I/opt/Qt/5.4/gcc_64/include/QtWidgets -I/opt/Qt/5.4/gcc_64/include/QtGui -I/opt/Qt/5.4/gcc_64/include/QtCore comment_highlighter.h -o moc_comment_highlighter.cpp
 
 moc_gremlindlg.cpp: /media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QtGui \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QtGuiDepends \
@@ -2680,47 +2551,8 @@ moc_gremlindlg.cpp: /media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QtGui 
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QSettings \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QCoreApplication \
 		ui_gremlinDlg.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QVariant \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QApplication \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialog \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdialog.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialogButtonBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QGridLayout \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qgridlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qboxlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLabel \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlabel.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLineEdit \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlineedit.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QSpacerItem \
 		gremlindlg.h
-	/opt/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/opt/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/include -I/usr/src/MK-Qt5/include -I'/usr/src/MK-Qt5/qt/QtAxis/$QTDIR/include' -I/opt/Qt/5.4/gcc_64/include -I/opt/Qt/5.4/gcc_64/include/QtWidgets -I/opt/Qt/5.4/gcc_64/include/QtGui -I/opt/Qt/5.4/gcc_64/include/QtCore gremlindlg.h -o moc_gremlindlg.cpp
+	/opt/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/opt/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/src/MK-Qt5/qt/QtAxis -I/usr/include -I/usr/src/MK-Qt5/include -I'/usr/src/MK-Qt5/qt/QtAxis/$QTDIR/include' -I'/usr/src/MK-Qt5/qt/QtAxis/$EMC2_HOME/include' -I/opt/Qt/5.4/gcc_64/include -I/opt/Qt/5.4/gcc_64/include/QtWidgets -I/opt/Qt/5.4/gcc_64/include/QtGui -I/opt/Qt/5.4/gcc_64/include/QtCore gremlindlg.h -o moc_gremlindlg.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -3358,80 +3190,25 @@ main.o: main.cpp QtAxis.h \
 		HAL_Access.h \
 		NML_Access.h \
 		ui_axis.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QVariant \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QApplication \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QGridLayout \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qgridlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qboxlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHBoxLayout \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLabel \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlabel.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLineEdit \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlineedit.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QListWidget \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlistwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlistview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMainWindow \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenu \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenuBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenubar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QPushButton \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qpushbutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QRadioButton \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qradiobutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QSlider \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QSpacerItem \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QStatusBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstatusbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QTabWidget \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QTextBrowser \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextbrowser.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QToolBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtoolbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QWidget \
+		touch-off_dlg.h \
+		ui_touch-off_dlg.h \
+		recent_files_dialog.h \
+		ui_recent_files_dialog.h \
 		code_editor.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QPlainTextEdit \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qplaintextedit.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenu \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
 		comment_highlighter.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QSyntaxHighlighter \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QHash \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QTextCharFormat \
-		touch-off_dlg.h \
-		ui_touch-off_dlg.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QComboBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qcombobox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialog \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialogButtonBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
-		recent_files_dialog.h \
-		ui_recent_files_dialog.h \
 		gremlindlg.h \
 		ui_gremlinDlg.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
@@ -3848,80 +3625,25 @@ QtAxis.o: QtAxis.cpp QtAxis.h \
 		HAL_Access.h \
 		NML_Access.h \
 		ui_axis.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QVariant \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QApplication \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QGridLayout \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qgridlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qboxlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHBoxLayout \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLabel \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlabel.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLineEdit \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlineedit.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QListWidget \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlistwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlistview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMainWindow \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenu \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenuBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenubar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QPushButton \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qpushbutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QRadioButton \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qradiobutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QSlider \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QSpacerItem \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QStatusBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstatusbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QTabWidget \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QTextBrowser \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextbrowser.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QToolBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtoolbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QWidget \
+		touch-off_dlg.h \
+		ui_touch-off_dlg.h \
+		recent_files_dialog.h \
+		ui_recent_files_dialog.h \
 		code_editor.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QPlainTextEdit \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qplaintextedit.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenu \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
 		comment_highlighter.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QSyntaxHighlighter \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QHash \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QTextCharFormat \
-		touch-off_dlg.h \
-		ui_touch-off_dlg.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QComboBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qcombobox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialog \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialogButtonBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
-		recent_files_dialog.h \
-		ui_recent_files_dialog.h \
 		gremlindlg.h \
 		ui_gremlinDlg.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QShortcut \
@@ -4328,41 +4050,6 @@ touch-off_dlg.o: touch-off_dlg.cpp touch-off_dlg.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QSettings \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QCoreApplication \
 		ui_touch-off_dlg.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QVariant \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QApplication \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QComboBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qcombobox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialog \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdialog.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialogButtonBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLabel \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlabel.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLineEdit \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlineedit.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QtDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o touch-off_dlg.o touch-off_dlg.cpp
 
@@ -4778,80 +4465,25 @@ QtAxis_files.o: QtAxis_files.cpp QtAxis.h \
 		HAL_Access.h \
 		NML_Access.h \
 		ui_axis.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QVariant \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QApplication \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QGridLayout \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qgridlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qboxlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHBoxLayout \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLabel \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlabel.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLineEdit \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlineedit.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QListWidget \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlistwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlistview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMainWindow \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenu \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenuBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenubar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QPushButton \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qpushbutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QRadioButton \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qradiobutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QSlider \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QSpacerItem \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QStatusBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstatusbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QTabWidget \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QTextBrowser \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextbrowser.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QToolBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtoolbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QWidget \
+		touch-off_dlg.h \
+		ui_touch-off_dlg.h \
+		recent_files_dialog.h \
+		ui_recent_files_dialog.h \
 		code_editor.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QPlainTextEdit \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qplaintextedit.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenu \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
 		comment_highlighter.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QSyntaxHighlighter \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QHash \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QTextCharFormat \
-		touch-off_dlg.h \
-		ui_touch-off_dlg.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QComboBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qcombobox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialog \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialogButtonBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
-		recent_files_dialog.h \
-		ui_recent_files_dialog.h \
 		gremlindlg.h \
 		ui_gremlinDlg.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QIODevice \
@@ -5270,80 +4902,25 @@ QtAxis_MDI.o: QtAxis_MDI.cpp QtAxis.h \
 		HAL_Access.h \
 		NML_Access.h \
 		ui_axis.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QVariant \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QApplication \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QGridLayout \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qgridlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qboxlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHBoxLayout \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLabel \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlabel.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLineEdit \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlineedit.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QListWidget \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlistwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlistview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMainWindow \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenu \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenuBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenubar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QPushButton \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qpushbutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QRadioButton \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qradiobutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QSlider \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QSpacerItem \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QStatusBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstatusbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QTabWidget \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QTextBrowser \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextbrowser.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QToolBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtoolbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QWidget \
+		touch-off_dlg.h \
+		ui_touch-off_dlg.h \
+		recent_files_dialog.h \
+		ui_recent_files_dialog.h \
 		code_editor.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QPlainTextEdit \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qplaintextedit.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenu \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
 		comment_highlighter.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QSyntaxHighlighter \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QHash \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QTextCharFormat \
-		touch-off_dlg.h \
-		ui_touch-off_dlg.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QComboBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qcombobox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialog \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialogButtonBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
-		recent_files_dialog.h \
-		ui_recent_files_dialog.h \
 		gremlindlg.h \
 		ui_gremlinDlg.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o QtAxis_MDI.o QtAxis_MDI.cpp
@@ -5760,80 +5337,25 @@ QtAxis_funcs.o: QtAxis_funcs.cpp QtAxis.h \
 		HAL_Access.h \
 		NML_Access.h \
 		ui_axis.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QVariant \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QApplication \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QGridLayout \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qgridlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qboxlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHBoxLayout \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLabel \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlabel.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLineEdit \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlineedit.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QListWidget \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlistwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlistview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMainWindow \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenu \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenuBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenubar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QPushButton \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qpushbutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QRadioButton \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qradiobutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QSlider \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QSpacerItem \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QStatusBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstatusbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QTabWidget \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QTextBrowser \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextbrowser.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QToolBar \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtoolbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QWidget \
+		touch-off_dlg.h \
+		ui_touch-off_dlg.h \
+		recent_files_dialog.h \
+		ui_recent_files_dialog.h \
 		code_editor.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QPlainTextEdit \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qplaintextedit.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QMenu \
+		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qmenu.h \
 		comment_highlighter.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QSyntaxHighlighter \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QHash \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QTextCharFormat \
-		touch-off_dlg.h \
-		ui_touch-off_dlg.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QComboBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qcombobox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialog \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialogButtonBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
-		recent_files_dialog.h \
-		ui_recent_files_dialog.h \
 		gremlindlg.h \
 		ui_gremlinDlg.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o QtAxis_funcs.o QtAxis_funcs.cpp
@@ -6232,46 +5754,7 @@ recent_files_dialog.o: recent_files_dialog.cpp recent_files_dialog.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/qtguiversion.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QSettings \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QCoreApplication \
-		ui_recent_files_dialog.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QVariant \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QApplication \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialog \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdialog.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QGridLayout \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qgridlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qboxlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QListWidget \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlistwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlistview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QPushButton \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qpushbutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QSpacerItem
+		ui_recent_files_dialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o recent_files_dialog.o recent_files_dialog.cpp
 
 code_editor.o: code_editor.cpp /media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtGui/QtGui \
@@ -7480,45 +6963,6 @@ gremlindlg.o: gremlindlg.cpp gremlindlg.h \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QSettings \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QCoreApplication \
 		ui_gremlinDlg.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QVariant \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QAction \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QApplication \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialog \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdialog.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QDialogButtonBox \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QGridLayout \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qgridlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qboxlayout.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLabel \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlabel.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QLineEdit \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/qlineedit.h \
-		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtWidgets/QSpacerItem \
 		/media/sdc2/opt/x86_amd64/Qt/5.4/gcc_64/include/QtCore/QtDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gremlindlg.o gremlindlg.cpp
 

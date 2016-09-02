@@ -8,7 +8,7 @@ TARGET = ../../bin/XHCMonitor
 QT += core gui widgets
 
 QMAKE_CXXFLAGS += -D_FORTIFY_SOURCE=0 -D_GNU_SOURCE -DULAPI -mhard-float -fno-fast-math -mieee-fp -fno-unsafe-math-optimizations -Wframe-larger-than=2560 -Os -std=c++0x
-INCLUDEPATH += . /usr/include /usr/local/include /usr/local/include/machinekit $QTDIR/include
+INCLUDEPATH += . /usr/include /usr/local/include $EMC2_HOME/include $QTDIR/include
 QMAKE_LIBDIR += /lib $QTDIR/lib /usr/local/lib /usr/local/lib/machinekit
 LIBS += -llinuxcnchal -llinuxcnc -lEMC_Access
 
