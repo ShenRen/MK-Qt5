@@ -57,7 +57,7 @@ if [ ! -d "$HOME/machinekit" ]; then
     else
         mkdir -p $HOME/machinekit
 	echo "Creating machinekit directory"
-        chown -R $USER:$USER $HOME/machinekit
+        chown -R $USER:$USER $HOME/machinekit.
     fi
 fi
 
@@ -102,8 +102,6 @@ MODULE_EXT=@MODEXT@ # module extension, used when insmod'ing
 
 DEBUG_FILE=$(mktemp /tmp/linuxcnc.debug.XXXXXX)
 PRINT_FILE=$(mktemp /tmp/linuxcnc.print.XXXXXX)
-ln -sf $PRINT_FILE /tmp/linuxcnc.print
-ln -sf $DEBUG_FILE /tmp/linuxcnc.debug
 
 program_available () {
     type -path "$1" > /dev/null 2>&1
@@ -245,7 +243,8 @@ LINUXCNCVERSION="@EMC2VERSION@"; export LINUXCNCVERSION
 # common from here..
 INIVAR=@EMC2_LIBEXEC_DIR@/inivar
 HALCMD="halcmd $DASHK $DASHV"
-PICKCONFIG="@WISH@ $LINUXCNC_TCL_DIR/bin/pickconfig.tcl"
+#PICKCONFIG="@WISH@ $LINUXCNC_TCL_DIR/bin/pickconfig.tcl"
+PICKCONFIG="qtchooser"
 LINUXCNC_EMCSH=@WISH@
 
 echo LINUXCNC_DIR=$LINUXCNC_DIR >>$PRINT_FILE
@@ -278,9 +277,16 @@ fi
 if [ ! -n "$INIFILE" ] ; then
     # nothing specified, get from the user
     # it returns either a path, or nothing at all
-    INIFILE=$($PICKCONFIG)
+#    INIFILE=$($PICKCONFIG)
     # if name is xxxx.demo, then:
     #    execute xxxx.demo in background and exit
+    $PICKCONFIG
+    INIFILE=$(< ~/.qtchooser)
+    if [ $INIFILE = "ESCAPE" ] ; then
+	echo "Escape pressed - Cancelled by user"
+	exit 0
+    fi
+
     if [ "${INIFILE%%.demo}".demo = "${INIFILE}" ] ; then
       "${INIFILE}" &
       exit 0
@@ -291,6 +297,8 @@ if [ ! -n "$INIFILE" ] ; then
     # still nothing specified, exit
     exit 0
 fi
+
+export INIFILE
 
 # delete directories from path, save name only
 INI_NAME="${INIFILE##*/}"
@@ -352,6 +360,26 @@ INIFILE=$(handle_includes $INIFILE)
 if [ $? -ne 0 ] ; then
     exit 1 ; # error
 fi
+if [ "$PREVINIFILE" != "$INIFILE" ]; then
+    trap "rm -f $INIFILE" 0 1 2 3 15; # Clean up the temporary file
+fi
+
+function handle_env () {
+    inifile=$1
+    outfile=`mktemp`; # Let the shell create a temporary file
+    echo -e "$(eval "echo -e \"`<$inifile`\"")" >> $outfile
+    cmp --silent $inifile $outfile
+    if [ $? -ne 0 ] ; then
+        echo $outfile ;# use the expanded file
+    else
+        rm -f $outfile 
+        echo $inifile ;# use the original file
+    fi
+    return 0 ;# ok
+}
+
+PREVINIFILE=$INIFILE
+INIFILE=$(handle_env $INIFILE)
 if [ "$PREVINIFILE" != "$INIFILE" ]; then
     trap "rm -f $INIFILE" 0 1 2 3 15; # Clean up the temporary file
 fi
