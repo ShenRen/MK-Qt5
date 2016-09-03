@@ -34,13 +34,18 @@ cd ../QtPopImage
 qmake -makefile
 make &> /dev/null;
 
+cd ../QtShowError
+qmake -makefile
+make &> /dev/null;
+
 cd $OLDWD
 
 strip ../bin/qtchooser
 strip ../bin/QtAxis
 strip ../bin/XHCMonitor
-strip ../bin/QtPopImage
-
+strip ../bin/qtpopimage
+strip ../bin/qtshowerror
+e
 echo "Qt programs built and installed"
 
 

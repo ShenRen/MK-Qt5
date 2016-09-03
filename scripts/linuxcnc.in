@@ -184,9 +184,10 @@ fi
 
 function ErrorCheck () {
     result=$?
-    if [ ! -z "$DISPLAY" ]; then
-        echo "catch {send -async popimage destroy .}; destroy ." | @WISH@
-    fi
+## no tcl popimage any more
+#    if [ ! -z "$DISPLAY" ]; then
+#        echo "catch {send -async popimage destroy .}; destroy ." | @WISH@
+#    fi
 
     if [ $result -ne 0 ]; then
         if tty -s || [ -z "$DISPLAY" ] ; then
@@ -211,8 +212,8 @@ and
     $HOME/linuxcnc_print.txt
 as well as in the output of the shell command 'dmesg' and in the terminal"
         else
-            @WISH@ $LINUXCNC_TCL_DIR/show_errors.tcl $DEBUG_FILE $PRINT_FILE
-        fi
+	    $LINUXCNC_BIN_DIR/qtshowerror $PRINT_FILE $DEBUG_FILE
+	fi
     fi
     rm -f $DEBUG_FILE $PRINT_FILE 2>/dev/null
     exit $result
