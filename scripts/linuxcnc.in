@@ -476,7 +476,7 @@ EMCDISPLAY=`(set -- $retval ; echo $1 )`
 EMCDISPLAYARGS=`(set -- $retval ; shift ; echo $* )`
 
 case $EMCDISPLAY in
-    tkemc) EMCDISPLAY=tklinuxcnc ;;
+#    tkemc) EMCDISPLAY=tklinuxcnc ;;
     xemc) EMCDISPLAY=xlinuxcnc ;;
 esac
 
@@ -843,7 +843,8 @@ echo task pid=$!
 echo "Starting DISPLAY program: $EMCDISPLAY" >>$PRINT_FILE
 result=0
 case $EMCDISPLAY in
-  tklinuxcnc|mini)
+  #tklinuxcnc|
+    mini)
     # tklinuxcnc and mini are in the tcl directory, not the bin directory
     if [ ! -x $LINUXCNC_TCL_DIR/$EMCDISPLAY.tcl ] ; then
 	echo "Can't execute DISPLAY program $LINUXCNC_TCL_DIR/$EMCDISPLAY.tcl $EMCDISPLAYARGS"

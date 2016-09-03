@@ -42,11 +42,10 @@ TCLSRCS := \
 	../tcl/bin/genedit.tcl \
 	../tcl/bin/halconfig.tcl \
 	../tcl/bin/halshow.tcl \
-#	../tcl/bin/pickconfig.tcl \
 	../tcl/bin/tkbackplot.tcl \
 	../tcl/mini.tcl \
 	../tcl/show_errors.tcl \
-	../tcl/tklinuxcnc.tcl \
+#	../tcl/tklinuxcnc.tcl \
 	../tcl/scripts/Set_Coordinates.tcl \
 	../tcl/scripts/balloon.tcl \
 	../tcl/scripts/emchelp.tcl \

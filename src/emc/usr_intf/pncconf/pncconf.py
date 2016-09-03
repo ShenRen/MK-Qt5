@@ -180,7 +180,7 @@ _BOARDTITLE = 0;_BOARDNAME = 1;_FIRMWARE = 2;_DIRECTORY = 3;_HALDRIVER = 4;_MAXE
 _PWMPINS = 10;_MAXTPPWM = 11;_TTPWMPINMS = 12;_MAXSTEP = 13;_STEPPINS = 14;_MAXSSERIALPORTS = 15;_MAXSSERIALCHANNELS = 16;_HASWATCHDOG = 25;
 _MAXGPIO = 26;_LOWFREQ = 27;_HIFREQ = 28;_NUMOFCNCTRS = 29;_STARTOFDATA = 30
 _SSCOMBOLEN = 60
-_AXIS = 1;_TKLINUXCNC = 2;_MINI = 3;_TOUCHY = 4
+_AXIS = 1;_MINI = 2;_TOUCHY = 3
 _IMPERIAL = 0;_METRIC = 1
 
 # board title, boardname, firmwarename, firmware directory,Hal driver name,
@@ -1337,8 +1337,8 @@ If you have a REALLY large config that you wish to convert to this newer version
         print >>file, "[DISPLAY]"
         if self.frontend == _AXIS:
             print >>file, "DISPLAY = axis"
-        elif self.frontend == _TKLINUXCNC:
-            print >>file, "DISPLAY = tklinuxcnc"
+#        elif self.frontend == _TKLINUXCNC:
+#            print >>file, "DISPLAY = tklinuxcnc"
         elif self.frontend == _MINI:
             print >>file, "DISPLAY = mini"
         elif self.frontend == _TOUCHY:
@@ -3360,7 +3360,7 @@ If you have a REALLY large config that you wish to convert to this newer version
         if  self.units == _IMPERIAL: unit = "an imperial"
         else: unit = "a metric"
         if self.frontend == _AXIS: display = "AXIS"
-        elif self.frontend == _TKLINUXCNC: display = "Tklinuxcnc"
+#        elif self.frontend == _TKLINUXCNC: display = "Tklinuxcnc"
         elif self.frontend == _MINI: display = "Mini"
         elif self.frontend == _TOUCHY: display = "TOUCHY"
         else: display = "an unknown"
@@ -4332,7 +4332,7 @@ class App:
         if self.data.number_pports>2:
              self.widgets.pp3_checkbutton.set_active(1)
         if self.data.frontend == _AXIS : self.widgets.GUIAXIS.set_active(True)
-        elif self.data.frontend == _TKLINUXCNC: self.widgets.GUITKLINUXCNC.set_active(True)
+#        elif self.data.frontend == _TKLINUXCNC: self.widgets.GUITKLINUXCNC.set_active(True)
         elif self.data.frontend == _MINI: self.widgets.GUIMINI.set_active(True)
         elif self.data.frontend == _TOUCHY: self.widgets.GUITOUCHY.set_active(True)
         
@@ -4418,8 +4418,8 @@ class App:
         self.data.pp3_direction = self.widgets.pp3_direction.get_active()
         if self.widgets.GUIAXIS.get_active():
            self.data.frontend = _AXIS
-        elif self.widgets.GUITKLINUXCNC.get_active():
-           self.data.frontend = _TKLINUXCNC
+#        elif self.widgets.GUITKLINUXCNC.get_active():
+#           self.data.frontend = _TKLINUXCNC
         elif self.widgets.GUIMINI.get_active():
            self.data.frontend = _MINI
         elif self.widgets.GUITOUCHY.get_active():
