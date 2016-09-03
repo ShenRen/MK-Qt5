@@ -717,7 +717,7 @@ docclean:
 	-rm -f ../man/doc/man9/*.asciidoc
 
 qtclean:
-	find ../qt/qtchooser/ ../qt/QtAxis/ ../qt/XHCMonitor/ ../qt/QtPopImage -name '*.o' -or -name 'moc_*.cpp' -or -name 'ui_*.h' -or -name 'qrc_*.cpp' | xargs rm -f
+	find ../qt/qtchooser/ ../qt/QtAxis/ ../qt/XHCMonitor/ ../qt/QtPopImage -name '*.o' -or -name 'moc_*.cpp' -or -name 'ui_*.h' -or -name 'qrc_*.cpp' -or -name 'Makefile' | xargs rm -f
 
 clean: depclean modclean docclean qtclean
 	find . -name '*.o' |xargs rm -f
