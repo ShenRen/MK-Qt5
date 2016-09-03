@@ -704,8 +704,9 @@ if [ "$img" != "" ] ; then
   fi
 fi
 if [ "$img" != "" ] ; then
-    if [ -x $LINUXCNC_TCL_DIR/bin/popimage ] ; then
-        $LINUXCNC_TCL_DIR/bin/popimage $img $imgtime &
+    if [ -x $LINUXCNC_BIN_DIR/qtpopimage ] ; then
+        $LINUXCNC_BIN_DIR/qtpopimage $img $imgtime &
+	sleep $imgtime
     fi
 fi
  

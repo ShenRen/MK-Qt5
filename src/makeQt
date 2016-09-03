@@ -30,11 +30,16 @@ cd ../XHCMonitor
 qmake -makefile
 make &> /dev/null;
 
+cd ../QtPopImage
+qmake -makefile
+make &> /dev/null;
+
 cd $OLDWD
 
 strip ../bin/qtchooser
 strip ../bin/QtAxis
 strip ../bin/XHCMonitor
+strip ../bin/QtPopImage
 
 echo "Qt programs built and installed"
 
