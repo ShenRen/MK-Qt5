@@ -8,7 +8,7 @@ TARGET = ../../bin/QtAxis
 QT += core gui widgets
 
 QMAKE_CXXFLAGS += -D_FORTIFY_SOURCE=0 -D_GNU_SOURCE -DULAPI -mhard-float -fno-fast-math -mieee-fp -fno-unsafe-math-optimizations -Wframe-larger-than=2560 -Os -std=c++0x
-INCLUDEPATH += . /usr/include /usr/src/MK-Qt5/include $QTDIR/include ../include
+INCLUDEPATH += . /usr/include /usr/local/include /usr/src/MK-Qt5/include $QTDIR/include /usr/local/include/machinekit
 QMAKE_LIBDIR += /lib $QTDIR/lib /usr/local/lib/machinekit
 LIBS += -llinuxcncini -llinuxcnchal -lnml -llinuxcnc -lposemath -lEMC_Access
 
