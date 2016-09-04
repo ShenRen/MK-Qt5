@@ -67,7 +67,7 @@
  </widget>
  <resources>
   <include location="qtchooser.qrc"/>
-  <include location="../QtChooserDlg/qtchooser.qrc"/>
+  <include location="qtchooser.qrc"/>
  </resources>
  <connections>
   <connection>
