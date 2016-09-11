@@ -1,1 +1,2 @@
+#newthread base-thread  [HAL]BASE_PERIOD
 newthread servo-thread [HAL]SERVO_PERIOD fp

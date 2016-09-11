@@ -15,6 +15,8 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program; if not, write to the Free Software
 #    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#        -command {exec QtHalShow &}
+#        -command {exec $env(LINUXCNC_TCL_DIR)/bin/halshow.tcl &}
 
 lappend auto_path $::linuxcnc::TCL_LIB_DIR
 
@@ -169,7 +171,8 @@ setup_menu_accel .menu.machine end [_ "Paste to MDI histor_y"]
 setup_menu_accel .menu.machine end [_ "_Calibration"]
 
 .menu.machine add command \
-        -command {exec $env(LINUXCNC_TCL_DIR)/bin/halshow.tcl &}
+        -command {exec QtHalShow &}
+
 setup_menu_accel .menu.machine end [_ "Show _Hal Configuration"]
 
 .menu.machine add command \

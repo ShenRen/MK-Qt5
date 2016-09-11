@@ -16,7 +16,7 @@ DEPENDPATH += .
 
 INCLUDEPATH += .
 
-RESOURCES = qtchooser.qrc
+RESOURCES += qtchooser.qrc
 
 # Input
 HEADERS += qtchooserdlg.h

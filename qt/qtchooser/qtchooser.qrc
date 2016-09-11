@@ -1,5 +1,7 @@
 <RCC>
-  <qresource prefix="newPrefix">
-    <file>machinekiticon.png</file>
+  <qresource>
+    <file>images/file.png</file>
+    <file>images/folder.png</file>
+    <file>images/machinekiticon.png</file>
   </qresource>
 </RCC>

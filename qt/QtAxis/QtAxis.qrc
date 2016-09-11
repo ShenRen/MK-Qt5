@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/new/CNCicons">
+    <qresource>
         <file>icons/exit.png</file>
         <file>icons/fileopen.png</file>
         <file>icons/filesaveas.png</file>

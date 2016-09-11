@@ -62,7 +62,7 @@ QStringList lst;
 
 XHCMonitorDialog::~XHCMonitorDialog()
 {
-    hal_exit(comp_id);
+    _hal->cleanUp();
 }
 
 void XHCMonitorDialog::onHide()
@@ -380,7 +380,7 @@ void XHCMonitorDialog::startTimer()
 
 void XHCMonitorDialog::eventsLoop()
 {
-QString str, str1, str2, str3;
+QString str, str1;
 bool connected = false;
 
     str = "xhc-hb04.connected";
