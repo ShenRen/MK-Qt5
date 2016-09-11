@@ -39,6 +39,10 @@ cd ../QtShowError
 qmake -makefile
 make -j$(nproc);
 
+cd ../QtHalShow
+qmake -makefile
+make -j$(nproc);
+
 cd $OLDWD
 
 strip ../bin/qtchooser
@@ -46,6 +50,7 @@ strip ../bin/QtAxis
 strip ../bin/XHCMonitor
 strip ../bin/qtpopimage
 strip ../bin/qtshowerror
+strip ../bin/QtHalShow
 
 echo "Qt programs built and installed"
 
