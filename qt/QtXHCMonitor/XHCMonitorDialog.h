@@ -10,7 +10,7 @@
 #include <hal.h>
 #include <hal_priv.h>
 
-#include "HAL_Access.h"
+#include "HAL_Accessp.h"
 
 #include "ui_XHCMonitorDialog.h"
 
@@ -31,6 +31,7 @@ public:
     ~XHCMonitorDialog();
     
 private:
+    void reject();
     HAL_Access *_hal;
 
     QTimer *timer;
@@ -48,6 +49,11 @@ private:
     bool bRequirePendant;
     bool bConnected;
     bool bHidden;
+    
+    bool bShowHaluiPins;
+    bool bShowUtilPins;
+    bool bShowXHCPins;
+    QStringList list;
     
     // settings
     QString iniFile;
@@ -80,17 +86,6 @@ private:
     QString reset;
 
     void showList(QStringList& list);
-
-// in hal_info.cpp
-//    void QStrncpy(char* , QString& , int );
-//    const char* data_type(int type);
-//    const char* pin_data_dir(int dir);
-//    const char* param_data_dir(int dir);
-//    const char* data_arrow1(int dir);
-//    char* data_value(int type, void *valptr);
-//    int get_common(hal_type_t type, void *d_ptr, QString& value);
-//    int getPValue(QString& name, QString& value);
-//    void getPinInfo(QString& name, QStringList& list);
 
 private slots:
     virtual void onHide();

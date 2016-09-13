@@ -337,6 +337,8 @@ QString str, str1;
     // execute hal commands here
     str1 = le_Command->text();
     str = str1.left(str1.indexOf(" "));
+    if(str != "halcmd")
+	str1 = "halcmd " + str1;
     system(str1.toLatin1().constData());
 }
 

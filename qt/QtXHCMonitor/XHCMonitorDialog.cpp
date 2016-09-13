@@ -36,14 +36,34 @@ QStringList lst;
     
     bFirstRun = true;
     bHidden = false;
+    bShowHaluiPins = false;
+    bShowUtilPins = false;
+    bShowXHCPins = false;
 
 // rt stuff
-    _hal = new HAL_Access(argc, argv, prefix , false);
+//    _hal = new HAL_Access(argc, argv, prefix , false);
+//
+//    if((r = createPins()))
+//        _hal->cleanUp();
+//    else
+//        _hal->engage();
+
+// rt stuff.
+
+    _hal = new HAL_Access(); // passive version of lib, we do our own connection
+
+    comp_id = hal_init("xhc-monitor");
+
+    if(comp_id < 0)
+        exit(-1);
 
     if((r = createPins()))
-        _hal->cleanUp();
+        hal_exit(comp_id);
     else
-        _hal->engage();
+        {
+        hal_ready(comp_id);
+        qDebug() << "Component registered and ready" << "comp_ID " << comp_id;
+        }
 
     // read the ini file
     getSettings();
@@ -62,7 +82,12 @@ QStringList lst;
 
 XHCMonitorDialog::~XHCMonitorDialog()
 {
-    _hal->cleanUp();
+
+}
+
+void XHCMonitorDialog::reject()
+{
+// prevent exit using Alt F4 or window buttons
 }
 
 void XHCMonitorDialog::onHide()
@@ -71,11 +96,24 @@ void XHCMonitorDialog::onHide()
     bHidden = true;
 }
 
+void XHCMonitorDialog::startTimer()
+{   
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(eventsLoop()));
+    timer->start(1000);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
 void XHCMonitorDialog::showList(QStringList& list)
 {
 int y, x;
+QString str;
 QStringList rowList, lst;
 QTableWidgetItem *newItem;
+QColor red("#FF0000"), green("#008000"), blue("#0000FF"), purple("#800080"), fuscia("#FF00FF");
+QColor maroon("#800000"), aqua("#00FFFF"), olive("#808000"), teal("#008080"), orange("#FF8C00");
+QRegExp re("\\d*");  // a digit (\d), zero or more times
 
     resultsTable->clearContents();
         // this is the best way (undocumented) to remove the rows and leave headers
@@ -90,6 +128,34 @@ QTableWidgetItem *newItem;
 	    newItem = new QTableWidgetItem();
 	    newItem->setText(rowList[y]);
 	    resultsTable->setItem(x,y, newItem);
+        if( (rowList[y].contains("Thread Users")) || (rowList[y].contains("No Users")) )
+            newItem->setForeground(red);
+        else if( rowList[y].contains("TRUE") || rowList[y] == "YES" || rowList[y] == "ready")
+            newItem->setForeground(green);
+        else if( rowList[y].contains("FALSE") || rowList[y] == "NO" || rowList[y] == "initializing")
+            newItem->setForeground(red);
+        else if( rowList[y] == "IN" || rowList[y] == "RO" || rowList[y] == "INST")
+            newItem->setForeground(purple);
+        else if( rowList[y] == "OUT" || rowList[y] == "RW" || rowList[y].contains("RT") )
+            newItem->setForeground(blue);
+        else if( rowList[y] == "I/O" )
+            newItem->setForeground(fuscia);
+        else if( rowList[y].contains("bit" ))
+            newItem->setForeground(teal);
+        else if( rowList[y].contains("s32" ))
+            newItem->setForeground(aqua);
+        else if( rowList[y].contains("u32" ))
+            newItem->setForeground(olive);
+        else if( rowList[y].contains("float" ))
+            newItem->setForeground(maroon);
+        else 
+            {
+            str = rowList[y];
+            str = str.simplified();
+            str = str.remove("-"); str = str.remove("+"); str = str.remove(".");
+            if( re.exactMatch(str))
+                newItem->setForeground(orange);
+            }
 	    }
 	}
     // make table fir the widget
@@ -101,31 +167,40 @@ QTableWidgetItem *newItem;
 
 }
 
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
 void XHCMonitorDialog::onShowXHCPins()
 {
-QStringList list;
 QString name = "xhc-hb04";
 
     _hal->getPinInfo(name, list, true);
     showList(list);
+    bShowHaluiPins = false;
+    bShowUtilPins = false;
+    bShowXHCPins = true;
 }
 
 void XHCMonitorDialog::onShowUtilPins()
 {
-QStringList list;
 QString name = "pendant_util";
 
     _hal->getPinInfo(name, list, true);
     showList(list);
+    bShowHaluiPins = false;
+    bShowUtilPins = true;
+    bShowXHCPins = false;
 }
 
 void XHCMonitorDialog::onShowHaluiPins()
 {
-QStringList list;
 QString name = "halui";
 
     _hal->getPinInfo(name, list, true);
     showList(list);
+    bShowHaluiPins = true;
+    bShowUtilPins = false;
+    bShowXHCPins = false;
 }
 
 void XHCMonitorDialog::onMonitor()
@@ -133,6 +208,8 @@ void XHCMonitorDialog::onMonitor()
     textEdit->setText("Checking for presence of pendant.............");
     bFirstRun = true;
 }
+
+///////////////////////////////////////////////////////////////////////////////////////
 
 void XHCMonitorDialog::getSettings()
 {
@@ -370,18 +447,11 @@ int x;
     return 0;
 }
 
-void XHCMonitorDialog::startTimer()
-{   
-    timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(eventsLoop()));
-    timer->start(1000);
-}
-
-
 void XHCMonitorDialog::eventsLoop()
 {
 QString str, str1;
-bool connected = false;
+QStringList lst;
+bool connected = false, changed = false;
 
     str = "xhc-hb04.connected";
 
@@ -415,6 +485,46 @@ bool connected = false;
             show();
             bHidden = false;
             }
+        }
+
+    if(bShowHaluiPins)
+        {
+        str1 = "halui";
+        _hal->getPinInfo(str1, lst, true);
+        }
+    else if(bShowUtilPins)
+        {
+        str1 = "pendant_util";
+        _hal->getPinInfo(str1, lst, true);
+        }
+    else if(bShowXHCPins)
+        {
+        str1 = "xhc-hb04";
+        _hal->getPinInfo(str1, lst, true);
+        }
+    else
+        return;
+    
+    if(list.size() != lst.size())
+        changed = true;
+    else
+        {
+        for(int x = 0; x < lst.size(); x++)
+            {
+            //qDebug() << lst[x];
+            if(list[x] != lst[x]) 
+                {
+                changed = true;
+                break;
+                }
+            }
+        }
+    // if changed replace the contents and force a redraw of the table
+    if(changed)
+        {
+        list.clear();
+        list = lst;
+        showList(list);
         }
 }
 

@@ -2,6 +2,8 @@
 
 int main( int argc, char ** argv )
 {
+    
+    //TODO check for previous instance
 //int x;
 //    for(x = 0; x < argc; x++)
 //	qDebug() << argv[x];

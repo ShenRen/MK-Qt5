@@ -121,7 +121,7 @@ QString str;
                 str = fileInfo.fileName();
             QTreeWidgetItem* item = new QTreeWidgetItem(header);
             item->setText(0, str);
-            item->setIcon(0,*(new QIcon("images/folder.png")));
+            item->setIcon(0,*(new QIcon("../images/folder.png")));
             ret = addChildren(item,fileInfo.filePath());
             if(ret != NULL)
                 selectionItem = ret;
@@ -168,7 +168,7 @@ QTreeWidgetItem *ret, *ptr = NULL;
             else
                 str = fileInfo.fileName();
             QTreeWidgetItem* child = new QTreeWidgetItem();
-            child->setIcon(0,*(new QIcon("images/folder.png")));
+            child->setIcon(0,*(new QIcon("../images/folder.png")));
             child->setText(0, str);
             item->addChild(child);
                 // if a dir recurse until a file

@@ -1,12 +1,18 @@
 #include "QtHalShow.h"
+#include "RunGuard.h"
+#include <QtDebug>
+#include <QMessageBox>
 
-// TODO
-// see if the app can be just hidden on any close method
-// then if invoked again, just show()
-// Will need to walk a list of current Qt processes?
 
 int main( int argc, char ** argv )
 {
+    RunGuard guard("XL9PY644FG" );
+    if ( !guard.tryToRun() )
+        {
+        qDebug() << "\nThere is already an instance of 'HAL Configuration' running\n";
+        return 0;
+        }
+
     QApplication app( argc, argv );
     QtHalShow *d = new QtHalShow();
     d->exec();

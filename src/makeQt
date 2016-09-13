@@ -19,7 +19,7 @@ fi
 
 
 OLDWD=$PWD
-cd ../qt/qtchooser
+cd ../qt/QtChooser
 qmake -makefile
 make -j$(nproc);
 
@@ -27,7 +27,7 @@ cd ../QtAxis
 qmake -makefile
 make -j$(nproc);
 
-cd ../XHCMonitor
+cd ../QtXHCMonitor
 qmake -makefile
 make -j$(nproc);
 
@@ -45,11 +45,11 @@ make -j$(nproc);
 
 cd $OLDWD
 
-strip ../bin/qtchooser
+strip ../bin/QtChooser
 strip ../bin/QtAxis
-strip ../bin/XHCMonitor
-strip ../bin/qtpopimage
-strip ../bin/qtshowerror
+strip ../bin/QtXHCMonitor
+strip ../bin/QtPopImage
+strip ../bin/QtShowError
 strip ../bin/QtHalShow
 
 echo "Qt programs built and installed"

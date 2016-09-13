@@ -34,7 +34,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="halshow.qrc">:/newPrefix/machinekiticon.png</pixmap>
+        <pixmap resource="halshow.qrc">:/images/machinekiticon.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>

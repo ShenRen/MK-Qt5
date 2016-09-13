@@ -10,7 +10,7 @@ QT += core gui widgets
 QMAKE_CXXFLAGS += -D_FORTIFY_SOURCE=0 -D_GNU_SOURCE -DULAPI -mhard-float -fno-fast-math -mieee-fp -fno-unsafe-math-optimizations -Wframe-larger-than=2560 -Os -std=c++0x
 INCLUDEPATH += . /usr/include /usr/local/include /usr/local/include/machinekit $QTDIR/include
 QMAKE_LIBDIR += /lib $QTDIR/lib /usr/local/lib /usr/local/lib/machinekit
-LIBS += -llinuxcnchal -llinuxcnc -lEMC_Accessp
+LIBS += -llinuxcnchal -llinuxcnc -lQtHalLib
 
 DEPENDPATH += .
 
@@ -20,7 +20,7 @@ FORMS += halshow.ui
 
 RESOURCES += halshow.qrc
 
-HEADERS += QtHalShow.h 
+HEADERS += QtHalShow.h RunGuard.h
 
-SOURCES += main.cpp QtHalShow.cpp
+SOURCES += main.cpp QtHalShow.cpp RunGuard.cpp
 

@@ -212,7 +212,7 @@ and
     $HOME/linuxcnc_print.txt
 as well as in the output of the shell command 'dmesg' and in the terminal"
         else
-	    $LINUXCNC_BIN_DIR/qtshowerror $PRINT_FILE $DEBUG_FILE
+	    $LINUXCNC_BIN_DIR/QtShowError $PRINT_FILE $DEBUG_FILE
 	fi
     fi
     rm -f $DEBUG_FILE $PRINT_FILE 2>/dev/null
@@ -245,7 +245,7 @@ LINUXCNCVERSION="@EMC2VERSION@"; export LINUXCNCVERSION
 INIVAR=@EMC2_LIBEXEC_DIR@/inivar
 HALCMD="halcmd $DASHK $DASHV"
 #PICKCONFIG="@WISH@ $LINUXCNC_TCL_DIR/bin/pickconfig.tcl"
-PICKCONFIG="qtchooser"
+PICKCONFIG="QtChooser"
 LINUXCNC_EMCSH=@WISH@
 
 echo LINUXCNC_DIR=$LINUXCNC_DIR >>$PRINT_FILE
@@ -705,8 +705,8 @@ if [ "$img" != "" ] ; then
   fi
 fi
 if [ "$img" != "" ] ; then
-    if [ -x $LINUXCNC_BIN_DIR/qtpopimage ] ; then
-        $LINUXCNC_BIN_DIR/qtpopimage $img $imgtime &
+    if [ -x $LINUXCNC_BIN_DIR/QtPopImage ] ; then
+        $LINUXCNC_BIN_DIR/QtPopImage $img $imgtime &
 	sleep $imgtime
     fi
 fi
