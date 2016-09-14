@@ -100,9 +100,6 @@ QString str, str2;
 
     id = 0;
 
-    prefixName = "qtMDI";
-    iniFile = argv[2];
-
     actionToggleEstop->setChecked(true);
     actionToggleMachineOn->setEnabled(false);
     tabManual->setEnabled(false);
@@ -116,6 +113,15 @@ QString str, str2;
 
     _hal->engage();
 
+  // init NML
+    if (0 != _nml->tryNml())
+	{
+	qDebug() << "can't connect to emc";
+	exit(1);
+	}
+    else
+        qDebug() << "EMC contacted OK";
+    
     // ensure we start in estop and manual mode
     _hal->_nml->sendEstop();
     _hal->_nml->sendManual();
@@ -147,7 +153,7 @@ void QtAxis::onCloseDown()
 
     refreshTimer->stop();
 
-    _hal->_nml->cleanUp();
+    _nml->cleanUp();
 
     writeSettings();
     
