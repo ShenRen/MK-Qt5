@@ -100,6 +100,9 @@ QString str, str2;
 
     id = 0;
 
+    prefixName = "qtMDI";
+    iniFile = argv[2];
+
     actionToggleEstop->setChecked(true);
     actionToggleMachineOn->setEnabled(false);
     tabManual->setEnabled(false);
@@ -121,6 +124,7 @@ QString str, str2;
 
     startTimer(250);
     
+    // override the default behavior of gremlin_view by making this window top
     setWindowFlags(Qt::WindowStaysOnTopHint);
     
 
