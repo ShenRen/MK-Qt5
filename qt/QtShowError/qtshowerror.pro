@@ -1,6 +1,6 @@
 QT += core gui widgets
 
-TARGET = ../../bin/qtshowerror
+TARGET = ../../bin/QtShowError
 TEMPLATE = app
 
 

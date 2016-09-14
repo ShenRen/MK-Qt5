@@ -3,7 +3,7 @@
 ######################################################################
 
 TEMPLATE = app
-TARGET = ../../bin/qtpopimage
+TARGET = ../../bin/QtPopImage
 
 QT += core gui widgets
 
