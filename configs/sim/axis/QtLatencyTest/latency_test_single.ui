@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>qtvcpanel</class>
+ <class>latency_test_single</class>
  <widget class="HAL_MainWindow" name="qtvcpanel">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>741</width>
-    <height>310</height>
+    <height>292</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,10 +25,8 @@ NB. The max jitter is a cumulative highest ever spike.
 The Average will show the average range of current overruns
 It is worth allowing the computer to settle in for a couple of minutes and pressing reset before looking at figures.
 
-While the test is running, you should &quot;abuse&quot; the computer. Move windows around on the screen.
-Copy some large files around on the disk. Play some music. Run an OpenGL program such as glxgears.
-The idea is to put the PC through its paces while the latency test checks to see what the worst case numbers are.
-</string>
+This is a 'real world' test, the openGL loading will come from the gremlin widget.
+Run a gcode program as loading for the system
       </property>
      </widget>
     </item>
@@ -150,89 +148,6 @@ The idea is to put the PC through its paces while the latency test checks to see
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="lbBase">
-        <property name="text">
-         <string>Base Thread</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="HAL_S32NumberLabel" name="s32_max_base_int">
-        <property name="toolTip">
-         <string>Label to display the value of a S32 pin</string>
-        </property>
-        <property name="whatsThis">
-         <string>The HAL_S32NumberLabel displays value of a S32 pin.</string>
-        </property>
-        <property name="lineWidth">
-         <number>5</number>
-        </property>
-        <property name="midLineWidth">
-         <number>2</number>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <widget class="HAL_S32NumberLabel" name="s32_max_base_jitter">
-        <property name="toolTip">
-         <string>Label to display the value of a S32 pin</string>
-        </property>
-        <property name="whatsThis">
-         <string>The HAL_S32NumberLabel displays value of a S32 pin.</string>
-        </property>
-        <property name="lineWidth">
-         <number>5</number>
-        </property>
-        <property name="midLineWidth">
-         <number>2</number>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="3">
-       <widget class="HAL_S32NumberLabel" name="s32_last_base_int">
-        <property name="toolTip">
-         <string>Label to display the value of a S32 pin</string>
-        </property>
-        <property name="whatsThis">
-         <string>The HAL_S32NumberLabel displays value of a S32 pin.</string>
-        </property>
-        <property name="lineWidth">
-         <number>5</number>
-        </property>
-        <property name="midLineWidth">
-         <number>2</number>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="4">
-       <widget class="HAL_S32NumberLabel" name="s32_avg_base_jitter">
-        <property name="toolTip">
-         <string>Label to display the value of a S32 pin</string>
-        </property>
-        <property name="whatsThis">
-         <string>The HAL_S32NumberLabel displays value of a S32 pin.</string>
-        </property>
-        <property name="lineWidth">
-         <number>5</number>
-        </property>
-        <property name="midLineWidth">
-         <number>2</number>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
        <widget class="HAL_PushButton" name="pbReset">
         <property name="toolTip">
          <string>Button to change bit pin state</string>
@@ -245,7 +160,7 @@ The idea is to put the PC through its paces while the latency test checks to see
         </property>
        </widget>
       </item>
-      <item row="3" column="1" colspan="4">
+      <item row="2" column="1" colspan="4">
        <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>

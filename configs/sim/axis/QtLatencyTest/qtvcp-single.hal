@@ -1,0 +1,10 @@
+loadusr -Wn latency_test_single QtVCP $PWD/latency_test_single.ui
+
+loadrt timedelta
+addf timedelta.0 servo-thread
+
+net sl timedelta.0.max => latency_test_single.s32_max_servo_int
+net sj timedelta.0.jitter => latency_test_single.s32_max_servo_jitter
+net st timedelta.0.out => latency_test_single.s32_last_servo_int
+net sv timedelta.0.avg-err => latency_test_single.s32_avg_servo_jitter
+net reset latency_test_single.pbReset => timedelta.0.reset

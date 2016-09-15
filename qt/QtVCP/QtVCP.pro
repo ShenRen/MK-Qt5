@@ -3,17 +3,17 @@
 ######################################################################
 
 TEMPLATE = app
-TARGET = ../../bin/QtLatency
+TARGET = ../../bin/QtVCP
 
 DEPENDPATH += .
 
 QMAKE_CXXFLAGS += -D_FORTIFY_SOURCE=0 -D_GNU_SOURCE -DULAPI -mhard-float -fno-fast-math -mieee-fp -fno-unsafe-math-optimizations -Wframe-larger-than=2560 -Os -std=c++0x
 INCLUDEPATH += . /usr/include usr/include/linux /usr/local/include/machinekit /usr/local/include /opt/Qt/5.4/gcc/include /opt/Qt/5.4/gcc/include/QtDesigner
 QMAKE_LIBDIR += /lib /usr/local/lib/machinekit /opt/Qt/5.4/gcc_64/plugins/designer
-LIBS += -llinuxcncini -llinuxcnchal -lnml -llinuxcnc -lposemath -lhalwidgets_qt5 -lQtPanel
+LIBS += -llinuxcncini -llinuxcnchal -lnml -llinuxcnc -lposemath -lhalwidgets_qt5 -lQtPanelEMC
 
-QT += core gui widgets
+QT += core gui widgets uitools
 
 # Input
-HEADERS += qtlatency.h
-SOURCES += main.cpp qtlatency.cpp
+HEADERS += QtVCP.h
+SOURCES += main.cpp QtVCP.cpp

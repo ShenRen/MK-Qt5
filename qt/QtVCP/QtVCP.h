@@ -17,21 +17,29 @@
 ********************************************************************/
 
 
-#include "qtlatency.h"
+#ifndef QTLATENCY_H
+#define QTLATENCY_H
 
+#include <QCoreApplication>
+#include <QApplication>
+#include <QtDebug>
 
-qtlatency::qtlatency(int argc, char** argv)
+#include "HAL_CustomWidgets.h"
+
+#include "QtPanel.h"
+
+class QtVCP  : public HAL_MainWindow //, private Ui_latency_test
 {
-Q_UNUSED( argc )
-QString str = "qtlatency", str2 = argv[1];
+    Q_OBJECT
+public:
 
-	if(argv[1] == NULL)
-        {
-        qDebug() << "Syntax: loadusr qtlatency {path-to-ui-file}\n";
-        exit(-1);
-        }
+    QtVCP(int argc, char** argv);
+    virtual ~QtVCP() {};
     
-    panel = new qtPanel(this, str, str2 );
+private:	
+    qtPanel *panel;
 
-}
+};
 
+
+#endif

@@ -1,5 +1,5 @@
 /********************************************************************
-* Copyright (C) 2012 - 2014 ArcEye <arceye AT mgware DOT co DOT uk>
+* Copyright (C) 2012 - 2015 ArcEye <arceye AT mgware DOT co DOT uk>
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public
@@ -17,14 +17,13 @@
 ********************************************************************/
 
 
-#include "qtlatency.h"
+#include "QtVCP.h"
 
 
 
 int main( int argc, char ** argv )
 {
     QApplication a( argc, argv );
-    qtlatency w(argc, argv);
-    //w.show(); call show() after is built and central widget inserted
+    QtVCP w(argc, argv);
     return a.exec();
 }

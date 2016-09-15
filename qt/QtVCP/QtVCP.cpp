@@ -1,5 +1,5 @@
 /********************************************************************
-* Copyright (C) 2012 - 2014 ArcEye <arceye AT mgware DOT co DOT uk>
+* Copyright (C) 2012 - 2015 ArcEye <arceye AT mgware DOT co DOT uk>
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public
@@ -17,28 +17,21 @@
 ********************************************************************/
 
 
-#ifndef QTLATENCY_H
-#define QTLATENCY_H
+#include "QtVCP.h"
 
-#include <QCoreApplication>
-#include <QApplication>
-#include <QtDebug>
 
-#include "HAL_CustomWidgets.h"
-
-#include "QtPanel.h"
-
-class qtlatency  : public HAL_MainWindow //, private Ui_latency_test
+QtVCP::QtVCP(int argc, char** argv)
 {
-    Q_OBJECT
-public:
+Q_UNUSED( argc )
+QString str = argv[1];
 
-    qtlatency(int argc, char** argv);
+	if(argv[1] == NULL)
+        {
+        qDebug() << "Syntax: loadusr -W QtVCP {path-to-ui-file}\n";
+        exit(-1);
+        }
+    
+    panel = new qtPanel(this, str);
 
-private:	
-    qtPanel *panel;
+}
 
-};
-
-
-#endif

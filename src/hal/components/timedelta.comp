@@ -4,7 +4,7 @@ pin out s32 err=0;
 pin out s32 min_=0;
 pin out s32 max_=0;
 pin out s32 jitter=0;
-pin out float avg_err=0;
+pin out s32 avg_err=0;
 pin in bit reset;
 function _ nofp;
 variable __s64 last=0;
@@ -13,7 +13,7 @@ license "GPL";
 ;;
 #undef max
 #define max(a,b) ((a)>(b)?(a):(b))
-
+__s32 _count = 1;
 __s64 now = rtapi_get_time();
 __s64 del = (now - last);
 out = del;
@@ -31,7 +31,7 @@ if(last != 0) {
 		jitter = max(max_ - period, period - min_);
 	}
 	count++;
-	avg_err = err / (double)count;
+	avg_err = err / _count;
 }
 
 if(reset) { first = 1; last = 0; out = 0; jitter = 0; max_ = 0; }

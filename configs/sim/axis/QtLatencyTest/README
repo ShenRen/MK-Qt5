@@ -1,0 +1,18 @@
+This simulation contains 2 different types of latency test.
+
+axis_mm_latency_test_single.ini
+    This test lauches Axis and runs a servo thread only
+    latency test in parallel
+
+
+axis_mm_latency_test_double.ini
+    This test lauches Axis and runs both base and servo thread
+    latency test in parallel
+
+You may find that the double test produces considerably lower
+latency jitter on newer multi-core processors.
+
+This is due to the fact that it helps keep the larger caches
+on these processors full and keep the rt code in one cache.
+
+If so consider running a dummy 25 - 50K base-thread in your configuration.
