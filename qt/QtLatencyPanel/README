@@ -1,0 +1,3 @@
+latency-test implementation with all the qtreceive and pin functions within the QtPanel class
+
+Requires minimal calls to implement the HAL panel

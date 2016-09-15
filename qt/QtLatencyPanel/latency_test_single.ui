@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>latency_test_single</class>
+ <widget class="HAL_MainWindow" name="qtvcpanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>741</width>
+    <height>292</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Latency Test</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QLabel" name="lbText">
+      <property name="text">
+       <string>Let this test run for at least 20 minutes, then note the maximum Jitter.
+You will use it while configuring machinekit.
+
+NB. The max jitter is a cumulative highest ever spike.
+The Average will show the average range of current overruns
+It is worth allowing the computer to settle in for a couple of minutes and pressing reset before looking at figures.
+
+While the test is running, you should &quot;abuse&quot; the computer. Move windows around on the screen.
+Copy some large files around on the disk. Play some music. Run an OpenGL program such as glxgears.
+The idea is to put the PC through its paces while the latency test checks to see what the worst case numbers are.</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>108</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="lbMaxInt">
+        <property name="text">
+         <string>Max Interval</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="lbMaxJitter">
+        <property name="text">
+         <string>Max Jitter</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLabel" name="lbLastInt">
+        <property name="text">
+         <string>Last interval</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLabel" name="lbAvgJitter">
+        <property name="text">
+         <string>Average Jitter</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="lbServo">
+        <property name="text">
+         <string>Servo Thread</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="HAL_S32NumberLabel" name="s32_max_servo_int">
+        <property name="toolTip">
+         <string>Label to display the value of a S32 pin</string>
+        </property>
+        <property name="whatsThis">
+         <string>The HAL_S32NumberLabel displays value of a S32 pin.</string>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+        <property name="midLineWidth">
+         <number>2</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="HAL_S32NumberLabel" name="s32_max_servo_jitter">
+        <property name="toolTip">
+         <string>Label to display the value of a S32 pin</string>
+        </property>
+        <property name="whatsThis">
+         <string>The HAL_S32NumberLabel displays value of a S32 pin.</string>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+        <property name="midLineWidth">
+         <number>2</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="HAL_S32NumberLabel" name="s32_last_servo_int">
+        <property name="toolTip">
+         <string>Label to display the value of a S32 pin</string>
+        </property>
+        <property name="whatsThis">
+         <string>The HAL_S32NumberLabel displays value of a S32 pin.</string>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+        <property name="midLineWidth">
+         <number>2</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="HAL_S32NumberLabel" name="s32_avg_servo_jitter">
+        <property name="toolTip">
+         <string>Label to display the value of a S32 pin</string>
+        </property>
+        <property name="whatsThis">
+         <string>The HAL_S32NumberLabel displays value of a S32 pin.</string>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+        <property name="midLineWidth">
+         <number>2</number>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="HAL_PushButton" name="pbReset">
+        <property name="toolTip">
+         <string>Button to change bit pin state</string>
+        </property>
+        <property name="whatsThis">
+         <string>The HAL_PushButton changes the state of a bit pin.</string>
+        </property>
+        <property name="text">
+         <string>Reset</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="4">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>518</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>HAL_MainWindow</class>
+   <extends>QMainWindow</extends>
+   <header>HAL_CustomWidgets.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>HAL_PushButton</class>
+   <extends>QPushButton</extends>
+   <header>HAL_CustomWidgets.h</header>
+  </customwidget>
+  <customwidget>
+   <class>HAL_S32NumberLabel</class>
+   <extends>QLabel</extends>
+   <header>HAL_CustomWidgets.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
