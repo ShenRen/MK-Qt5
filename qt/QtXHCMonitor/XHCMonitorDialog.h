@@ -11,6 +11,7 @@
 #include <hal_priv.h>
 
 #include "HAL_Accessp.h"
+#include "Singleton.h"
 
 #include "ui_XHCMonitorDialog.h"
 

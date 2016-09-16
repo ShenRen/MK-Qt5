@@ -20,7 +20,7 @@ FORMS += halshow.ui
 
 RESOURCES += halshow.qrc
 
-HEADERS += QtHalShow.h RunGuard.h
+HEADERS += QtHalShow.h Singleton.h
 
-SOURCES += main.cpp QtHalShow.cpp RunGuard.cpp
+SOURCES += main.cpp QtHalShow.cpp Singleton.cpp
 

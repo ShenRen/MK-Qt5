@@ -1,19 +1,21 @@
 #include "QtHalShow.h"
-#include "RunGuard.h"
+#include "Singleton.h"
 #include <QtDebug>
 #include <QMessageBox>
 
 
 int main( int argc, char ** argv )
 {
-    RunGuard guard("XL9PY644FG" );
-    if ( !guard.tryToRun() )
+const QString str = "XL9PY644FG";
+
+    Singleton sinst(str);
+    if(!sinst.launch())
         {
         qDebug() << "\nThere is already an instance of 'HAL Configuration' running\n";
         return 0;
         }
 
-    QApplication app( argc, argv );
+    QApplication app(argc, argv);
     QtHalShow *d = new QtHalShow();
     d->exec();
     //return app.exec();

@@ -18,7 +18,7 @@ DEPENDPATH += .
 
 FORMS += XHCMonitorDialog.ui
 
-HEADERS += XHCMonitorDialog.h 
+HEADERS += XHCMonitorDialog.h Singleton.h
 
-SOURCES += main.cpp XHCMonitorDialog.cpp
+SOURCES += main.cpp XHCMonitorDialog.cpp Singleton.cpp
 

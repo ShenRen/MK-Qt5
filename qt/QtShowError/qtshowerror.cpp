@@ -15,6 +15,11 @@ QString str;
 	    str = argv[2];
 	    load(str, tb_debug);
 	    }
+	else
+	    {	    
+	    tb_debug->hide();
+	    l_debug->setText("Debug File Information: - None");
+	    }
 	}
     else
 	{
