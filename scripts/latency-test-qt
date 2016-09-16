@@ -1,0 +1,24 @@
+#!/bin/bash
+
+machinekit $EMC2_HOME/configs/sim/axis/QtLatencyTest/axis_mm_double_latency_test.ini &
+
+#cat > lat.hal <<EOF
+#loadusr -n latency_test_both QtVCP /configs/sim/axis/QtLatencyTest/latency_test_both.ui
+#newthread servo-thread 1000000 fp
+#newthread base-thread 25000
+#loadrt timedelta count=2
+#addf timedelta.1 servo-thread
+#addf timedelta.0 base-thread
+#net sl timedelta.1.max => latency_test_both.s32_max_servo_int
+#net sj timedelta.1.jitter => latency_test_both.s32_max_servo_jitter
+#net st timedelta.1.out => latency_test_both.s32_last_servo_int
+#net sv timedelta.1.avg-err => latency_test_both.s32_avg_servo_jitter
+#net bl timedelta.0.max => latency_test_both.s32_max_base_int
+#net bj timedelta.0.jitter => latency_test_both.s32_max_base_jitter
+#net bt timedelta.0.out => latency_test_both.s32_last_base_int
+#net bv timedelta.0.avg-err => latency_test_both.s32_avg_base_jitter
+#net reset latency_test_both.pbReset => timedelta.0.reset timedelta.1.reset
+#unloadrt timedelta
+#EOF
+
+#halrun lat.hal
